@@ -50,12 +50,13 @@ const searchClient = algoliasearch(
               <img src="{{image}}" align="left" alt="{{name}}" class="sizer" />
                 <div class="hit-name">
                   {{#helpers.highlight}}{ "attribute": "title_gr" }{{/helpers.highlight}}
-                </div>
+                <div>{{color_gr}}</div>
                 <div class="hit-description">
                   {{#helpers.highlight}}{ "attribute": "final_price" }{{/helpers.highlight}}€
-                </div> 
+                </div>
               </div>
             </div>
+          </div>
         </div>
       `,
       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
