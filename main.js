@@ -9,11 +9,13 @@ const searchClient = algoliasearch(
     const container3 = document.querySelector('#colors');
     const container4 = document.querySelector('#occasion_gr');
     const container5 = document.querySelector('h3');
+    const container6 = document.querySelector('#brand-list');
     container.style.display = helper.state.query === '' ? 'none' : '';
     container2.style.display = helper.state.query === '' ? 'none' : '';
     container3.style.display = helper.state.query === '' ? 'none' : '';
     container4.style.display = helper.state.query === '' ? 'none' : '';
     container5.style.display = helper.state.query === '' ? 'none' : '';
+    container6.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
     },
     indexName: 'Test_01',
@@ -118,4 +120,28 @@ const searchClient = algoliasearch(
   //   })
   // ]);
 
+  search.addWidgets([instantsearch.widgets.refinementList({
+    container: '#brand-list',
+    attribute: 'color_gr',
+    sortBy: ['count:desc', 'name:asc'],
+    templates: {
+      item: `
+        <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+          <span>{{label}} ({{count}})</span>
+        </a>
+      `,
+      showMoreText: `
+      {{#isShowingMore}}
+        Show less
+      {{/isShowingMore}}
+      {{^isShowingMore}}
+        Show more
+      {{/isShowingMore}}
+    `,
+    searchableNoResults: 'Κανένα αποτέλεσμα',
+    },
+  }),
+])
+
   search.start();
+
