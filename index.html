@@ -1,0 +1,43 @@
+<!doctype html>
+
+<head>
+  <title>Algolia Celestino Search</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css"
+    integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc=" crossorigin="anonymous"> -->
+</head>
+
+<body>
+  <header>
+    <h1>
+      <img src="https://www.celestino.gr/icons/celestino.svg" style="margin-right: 250px;">
+      <a href="https://www.celestino.gr/account/login.aspx" id="signin">Sign in</a>
+      <div id="search-box">
+        <div id="autocomplete"></div>
+      </div>
+    </h1>
+  </header>
+  <main>
+    <div class="hit-results">
+      <h3>Προιόντα</h3>
+      <div id="hits"></div>
+      <div class="filter-widgets" id="sub-categories">
+        <div class="filter-widgets" id="colors"></div>
+        <div class="vl"></div>
+      </div>
+    </div>
+  </main>
+
+  <script type="text/html" id="hit-template">
+    <div class="hits"></div>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"
+    integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch.umd.js"></script>
+  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/js/standalone/selectize.min.js"></script>
+</body>
