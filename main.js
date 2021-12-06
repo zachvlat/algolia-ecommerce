@@ -8,10 +8,12 @@ const searchClient = algoliasearch(
     const container2 = document.querySelector('#categories-gr');
     const container3 = document.querySelector('#colors');
     const container4 = document.querySelector('#occasion_gr');
+    const container5 = document.querySelector('h3');
     container.style.display = helper.state.query === '' ? 'none' : '';
     container2.style.display = helper.state.query === '' ? 'none' : '';
     container3.style.display = helper.state.query === '' ? 'none' : '';
     container4.style.display = helper.state.query === '' ? 'none' : '';
+    container5.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
     },
     indexName: 'Test_01',
@@ -43,7 +45,7 @@ const searchClient = algoliasearch(
   search.addWidgets([
     instantsearch.widgets.hits({
       container: '#hits',
-      limit: 5,
+      limit: 3,
       templates: {
         item: `
         <div class="container" href="{{link}}">
@@ -68,52 +70,52 @@ const searchClient = algoliasearch(
     })
   ]);
 
-  search.addWidgets([
-    instantsearch.widgets.hits({
-      container: "#categories-gr",
-      limit:3,
-      attributeName: "subcategory_gr",
-      templates:{
-        empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
-        item:`
-        <div class="filter-widgets">
-          <div>{{subcategory_gr}} </div>
-        </div>
-        `
-      }
-    })
-  ]);
+  // search.addWidgets([
+  //   instantsearch.widgets.hits({
+  //     container: "#categories-gr",
+  //     limit:3,
+  //     attributeName: "subcategory_gr",
+  //     templates:{
+  //       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
+  //       item:`
+  //       <div class="filter-widgets">
+  //         <div>{{subcategory_gr}} </div>
+  //       </div>
+  //       `
+  //     }
+  //   })
+  // ]);
 
-  search.addWidgets([
-    instantsearch.widgets.hits({
-      container: "#colors",
-      limit:3,
-      attributeName: "color_gr",
-      templates:{
-        empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
-        item:`
-        <div class="filter-widgets">
-          <div>{{color_gr}} </div>
-        </div>
-        `
-      }
-    })
-  ]);
+  // search.addWidgets([
+  //   instantsearch.widgets.hits({
+  //     container: "#colors",
+  //     limit:3,
+  //     attributeName: "color_gr",
+  //     templates:{
+  //       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
+  //       item:`
+  //       <div class="filter-widgets">
+  //         <div>{{color_gr}} </div>
+  //       </div>
+  //       `
+  //     }
+  //   })
+  // ]);
 
-  search.addWidgets([
-    instantsearch.widgets.hits({
-      container: "#occasion_gr",
-      limit:3,
-      attributeName: "occasion_gr",
-      templates:{
-        empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
-        item:`
-        <div class="filter-widgets">
-          <div>{{occasion_gr}} </div>
-        </div>
-        `
-      }
-    })
-  ]);
+  // search.addWidgets([
+  //   instantsearch.widgets.hits({
+  //     container: "#occasion_gr",
+  //     limit:3,
+  //     attributeName: "occasion_gr",
+  //     templates:{
+  //       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
+  //       item:`
+  //       <div class="filter-widgets">
+  //         <div>{{occasion_gr}} </div>
+  //       </div>
+  //       `
+  //     }
+  //   })
+  // ]);
 
   search.start();
