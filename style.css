@@ -25,10 +25,6 @@ li {
   list-style: none;
 }
 
-li :hover {
-  cursor: pointer;
-}
-
 li > div {
   margin-bottom: 5px;
 }
@@ -37,12 +33,9 @@ main {
   display: flex;
 }
 
-#hits :hover {
-  background-color: whitesmoke;
-}
-
 .sizer {
-  max-width: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .verticalline {
@@ -156,4 +149,15 @@ main {
 
 .filter-widgets > div {
   flex: 1;
+}
+
+.caption {
+  display: block;
+}
+
+.box {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
 }

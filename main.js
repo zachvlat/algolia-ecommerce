@@ -43,13 +43,14 @@ const searchClient = algoliasearch(
   search.addWidgets([
     instantsearch.widgets.hits({
       container: '#hits',
-      limit: 1,
+      limit: 5,
       templates: {
         item: `
         <div class="container" href="{{link}}">
           <div class="card">
             <div class="box">
               <img src="{{image}}" align="left" alt="{{name}}" class="sizer" />
+              <span class="caption">
                 <div class="hit-name">
                   {{#helpers.highlight}}{ "attribute": "title_gr" }{{/helpers.highlight}}
                 <div>{{color_gr}}</div>
@@ -57,9 +58,10 @@ const searchClient = algoliasearch(
                   {{#helpers.highlight}}{ "attribute": "final_price" }{{/helpers.highlight}}€
                 </div>
               </div>
-            </div>
+            </span>
           </div>
         </div>
+      </div>
       `,
       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
       },
