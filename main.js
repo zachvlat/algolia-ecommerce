@@ -94,29 +94,29 @@ const searchClient = algoliasearch(
   }),
 ])
 
-// search.addWidgets([instantsearch.widgets.refinementList({
-//   container: '#category-list',
-//   attribute: 'category_gr',
-//   limit: 3,
-//   showMore: true,
-//   sortBy: ['count:desc', 'name:asc'],
-//   templates: {
-//     item: `
-//       <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
-//         <span>{{label}} ({{count}})</span>
-//       </a>
-//     `,
-//     showMoreText: `
-//     {{#isShowingMore}}
-//       Λιγότερα
-//     {{/isShowingMore}}
-//     {{^isShowingMore}}
-//       Περισσότερα
-//     {{/isShowingMore}}
-//   `,
-//   searchableNoResults: 'Κανένα αποτέλεσμα',
-//   },
-// }),
-// ])
+search.addWidgets([instantsearch.widgets.refinementList({
+  container: '#category-list',
+  attribute: 'category_gr',
+  limit: 3,
+  showMore: true,
+  sortBy: ['count:desc', 'name:asc'],
+  templates: {
+    item: `
+      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+        <span>{{label}} ({{count}})</span>
+      </a>
+    `,
+    showMoreText: `
+    {{#isShowingMore}}
+      Λιγότερα
+    {{/isShowingMore}}
+    {{^isShowingMore}}
+      Περισσότερα
+    {{/isShowingMore}}
+  `,
+  searchableNoResults: 'Κανένα αποτέλεσμα',
+  },
+}),
+])
 
   search.start();
