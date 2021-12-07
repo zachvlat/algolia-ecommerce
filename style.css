@@ -9,6 +9,7 @@ header > div {
 
 h1 {
   text-align: center;
+  position: relative;
 }
 
 #signin {
@@ -33,6 +34,23 @@ main {
   display: flex;
 }
 
+#view-all {
+  color: aliceblue;
+  background-color: #001001;
+  border-style: none;
+  border-radius: 20px;
+  width: 100px;
+  height: 50px;
+  display: block;
+  float: left;
+  margin-left: 300px;
+}
+
+#view-all:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
 .sizer {
   width: 150px;
   height: 200px;
@@ -53,7 +71,7 @@ main {
   display: flex;
   flex-direction: column;
   float: left;
-  width: 10%;
+  width: 40%;
 }
 
 #colors {
@@ -119,6 +137,7 @@ main {
 }
 
 .search-box-celestino {
+  position: relative;
   border: none;
   width: 300px;
   outline: none;
@@ -155,6 +174,7 @@ main {
   padding-left: 500px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .ais-RefinementList-item {
@@ -166,7 +186,7 @@ a {
   color: black;
 }
 
-button {
+.ais-RefinementList-showMore {
   border-radius: 12px;
   background-color: white;
   color: black;
@@ -175,8 +195,9 @@ button {
 
 .fa-search {
   position: absolute;
-  top: 50px;
-  left: 13px;
+  top: 30px;
+  left: 7px;
   font-size: 18px;
   color: #b4b4b4;
+  z-index: 11;
 }
