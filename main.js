@@ -144,12 +144,4 @@ search.addWidgets([instantsearch.widgets.refinementList({
 }),
 ])
 
-// instantsearch.widgets.clearRefinements({
-//   container: '#clear-refinements',
-//   includedAttributes: ['category_gr','color_gr', 'gender_gr'],
-//   templates: {
-//     resetLabel: 'Clear refinements',
-//   },
-// });
-
   search.start();
