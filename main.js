@@ -72,57 +72,11 @@ const searchClient = algoliasearch(
     })
   ]);
 
-  // search.addWidgets([
-  //   instantsearch.widgets.hits({
-  //     container: "#categories-gr",
-  //     limit:3,
-  //     attributeName: "subcategory_gr",
-  //     templates:{
-  //       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
-  //       item:`
-  //       <div class="filter-widgets">
-  //         <div>{{subcategory_gr}} </div>
-  //       </div>
-  //       `
-  //     }
-  //   })
-  // ]);
-
-  // search.addWidgets([
-  //   instantsearch.widgets.hits({
-  //     container: "#colors",
-  //     limit:3,
-  //     attributeName: "color_gr",
-  //     templates:{
-  //       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
-  //       item:`
-  //       <div class="filter-widgets">
-  //         <div>{{color_gr}} </div>
-  //       </div>
-  //       `
-  //     }
-  //   })
-  // ]);
-
-  // search.addWidgets([
-  //   instantsearch.widgets.hits({
-  //     container: "#occasion_gr",
-  //     limit:3,
-  //     attributeName: "occasion_gr",
-  //     templates:{
-  //       empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
-  //       item:`
-  //       <div class="filter-widgets">
-  //         <div>{{occasion_gr}} </div>
-  //       </div>
-  //       `
-  //     }
-  //   })
-  // ]);
-
   search.addWidgets([instantsearch.widgets.refinementList({
     container: '#brand-list',
     attribute: 'color_gr',
+    limit: 3,
+    showMore: true,
     sortBy: ['count:desc', 'name:asc'],
     templates: {
       item: `
@@ -132,10 +86,10 @@ const searchClient = algoliasearch(
       `,
       showMoreText: `
       {{#isShowingMore}}
-        Show less
+        Λιγότερα
       {{/isShowingMore}}
       {{^isShowingMore}}
-        Show more
+        Περισσότερα
       {{/isShowingMore}}
     `,
     searchableNoResults: 'Κανένα αποτέλεσμα',

@@ -150,6 +150,20 @@ main {
 
 .ais-RefinementList-list {
   float: right;
-  width: 10%;
+  width: 100%;
   padding-left: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ais-RefinementList-item {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
 }
