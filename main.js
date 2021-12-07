@@ -119,4 +119,29 @@ search.addWidgets([instantsearch.widgets.refinementList({
 }),
 ])
 
+search.addWidgets([instantsearch.widgets.refinementList({
+  container: '#gender-list',
+  attribute: 'gender_gr',
+  limit: 3,
+  showMore: true,
+  sortBy: ['count:desc', 'name:asc'],
+  templates: {
+    item: `
+      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+        <span>{{label}} ({{count}})</span>
+      </a>
+    `,
+    showMoreText: `
+    {{#isShowingMore}}
+      Λιγότερα
+    {{/isShowingMore}}
+    {{^isShowingMore}}
+      Περισσότερα
+    {{/isShowingMore}}
+  `,
+  searchableNoResults: 'Κανένα αποτέλεσμα',
+  },
+}),
+])
+
   search.start();
