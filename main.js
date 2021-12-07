@@ -5,10 +5,12 @@ const searchClient = algoliasearch(
   const search = instantsearch({
     searchFunction(helper) {
     const container = document.querySelector('#hits');
-    const container5 = document.querySelector('h3');
     const container6 = document.querySelector('#color-list');
+    const container2 = document.querySelector("#sub-categories");
+    const container3 = document.querySelector(".hit-results");
     container.style.display = helper.state.query === '' ? 'none' : '';
-    container5.style.display = helper.state.query === '' ? 'none' : '';
+    container2.style.display = helper.state.query === '' ? 'none' : '';
+    container3.style.display = helper.state.query === '' ? 'none' : '';
     container6.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
     },
