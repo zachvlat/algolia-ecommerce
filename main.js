@@ -5,15 +5,9 @@ const searchClient = algoliasearch(
   const search = instantsearch({
     searchFunction(helper) {
     const container = document.querySelector('#hits');
-    const container2 = document.querySelector('#categories-gr');
-    const container3 = document.querySelector('#colors');
-    const container4 = document.querySelector('#occasion_gr');
     const container5 = document.querySelector('h3');
-    const container6 = document.querySelector('#brand-list');
+    const container6 = document.querySelector('#color-list');
     container.style.display = helper.state.query === '' ? 'none' : '';
-    container2.style.display = helper.state.query === '' ? 'none' : '';
-    container3.style.display = helper.state.query === '' ? 'none' : '';
-    container4.style.display = helper.state.query === '' ? 'none' : '';
     container5.style.display = helper.state.query === '' ? 'none' : '';
     container6.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
@@ -73,7 +67,7 @@ const searchClient = algoliasearch(
   ]);
 
   search.addWidgets([instantsearch.widgets.refinementList({
-    container: '#brand-list',
+    container: '#color-list',
     attribute: 'color_gr',
     limit: 3,
     showMore: true,
@@ -96,6 +90,31 @@ const searchClient = algoliasearch(
     },
   }),
 ])
+
+// search.addWidgets([instantsearch.widgets.refinementList({
+//   container: '#category-list',
+//   attribute: 'category_gr',
+//   limit: 3,
+//   showMore: true,
+//   sortBy: ['count:desc', 'name:asc'],
+//   templates: {
+//     item: `
+//       <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+//         <span>{{label}} ({{count}})</span>
+//       </a>
+//     `,
+//     showMoreText: `
+//     {{#isShowingMore}}
+//       Λιγότερα
+//     {{/isShowingMore}}
+//     {{^isShowingMore}}
+//       Περισσότερα
+//     {{/isShowingMore}}
+//   `,
+//   searchableNoResults: 'Κανένα αποτέλεσμα',
+//   },
+// }),
+// ])
 
   search.start();
 
