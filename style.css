@@ -35,6 +35,8 @@ main {
 }
 
 #view-all {
+  position: absolute;
+  bottom: 300px;
   color: aliceblue;
   background-color: #001001;
   border-style: none;
@@ -43,6 +45,7 @@ main {
   height: 50px;
   display: block;
   float: left;
+  margin: 0;
   margin-left: 300px;
 }
 
@@ -127,6 +130,10 @@ main {
   text-align: center;
   z-index: 10;
   margin: 20px 20px 60px;
+}
+
+.ais-Hits {
+  display: flex;
 }
 
 .ais-Hits-item {

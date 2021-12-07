@@ -8,11 +8,9 @@ const searchClient = algoliasearch(
     const container6 = document.querySelector('#color-list');
     const container2 = document.querySelector("#sub-categories");
     const container3 = document.querySelector(".hit-results");
-    // const container4 = document.querySelector("##clear-refinements");
     container.style.display = helper.state.query === '' ? 'none' : '';
     container2.style.display = helper.state.query === '' ? 'none' : '';
     container3.style.display = helper.state.query === '' ? 'none' : '';
-    // container4.style.display = helper.state.query === '' ? 'none' : '';
     container6.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
     },
