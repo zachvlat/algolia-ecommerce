@@ -29,13 +29,14 @@ const searchClient = algoliasearch(
   search.addWidgets([
     instantsearch.widgets.searchBox({
       container: '#search-box',
-      placeholder: 'Ψάξε για φορέματα/παντελόνια...',
+      placeholder: 'Αναζήτηση',
       searchAsYouType: true,
       autofocus: true,
       showReset: false,
       showSubmit: false,
       cssClasses: {
         input: "search-box-celestino",
+        submitIcon: "fa-search",
       }
     })
   ]);
@@ -119,4 +120,3 @@ const searchClient = algoliasearch(
 // ])
 
   search.start();
-

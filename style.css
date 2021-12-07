@@ -126,6 +126,7 @@ main {
   border-radius: 25px;
   height: 28px;
   text-shadow: none;
+  padding-left: 30px;
 }
 
 .ais-Hits-list {
@@ -170,4 +171,11 @@ button {
   background-color: white;
   color: black;
   border: 1px solid #444;
+}
+
+.fa-search {
+  position: absolute;
+  top: 50px;
+  left: 13px;
+  font-size: 18px;
 }

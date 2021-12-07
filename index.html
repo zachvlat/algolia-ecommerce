@@ -10,8 +10,10 @@
 <body>
   <header>
     <h1>
-      <img src="https://www.celestino.gr/icons/celestino.svg" style="margin-right: 250px;">
+      <a href="https://www.celestino.gr"><img src="https://www.celestino.gr/icons/celestino.svg"
+          style="margin-right: 250px;"></a>
       <a href="https://www.celestino.gr/account/login.aspx" id="signin">Sign in</a>
+      <i class="fas fa-search"></i>
       <div id="search-box">
         <div id="autocomplete"></div>
       </div>
@@ -20,11 +22,12 @@
   <main>
     <div class="hit-results">
       <h3>Προϊόντα</h3>
-      <div id="hits">
-      </div>
+      <div id="hits"></div>
       <div id="sub-categories">
         <h3>Χρώμα</h3>
         <div id="color-list"></div>
+        <!-- <h3>Κατηγορίες</h3>
+        <div id="category-list"></div> -->
       </div>
     </div>
   </main>
@@ -40,4 +43,8 @@
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/js/standalone/selectize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-recent-searches"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
