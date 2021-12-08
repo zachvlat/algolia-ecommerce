@@ -59,7 +59,6 @@ const searchClient = algoliasearch(
               <span class="caption">
                 <div class="hit-name">
                   {{#helpers.highlight}}{ "attribute": "title_gr" }{{/helpers.highlight}}
-                <div>{{color_gr}}</div>
                 <div class="hit-description">
                   {{#helpers.highlight}}{ "attribute": "final_price" }{{/helpers.highlight}}€
                 </div>
@@ -157,3 +156,23 @@ search.addWidgets([instantsearch.widgets.refinementList({
 ])
 
   search.start();
+
+
+//   `
+//   <div class="container" href="{{link}}">
+//   <div class="card">
+//     <div class="box">
+//       <img src="{{image}}" align="left" alt="{{name}}" class="sizer" />
+//       <span class="caption">
+//         <div class="hit-name">
+//           {{#helpers.highlight}}{ "attribute": "title_gr" }{{/helpers.highlight}}
+//          <div>{{color_gr}}</div>
+//         <div class="hit-description">
+//           {{#helpers.highlight}}{ "attribute": "final_price" }{{/helpers.highlight}}€
+//         </div>
+//       </div>
+//     </span>
+//   </div>
+// </div>
+// </div>
+// `

@@ -114,7 +114,7 @@ a {
 
 .ais-RefinementList-item {
   text-decoration: none;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .ais-RefinementList-showMore {
@@ -126,6 +126,7 @@ a {
 
 .caption {
   display: block;
+  font-size: 14px;
 }
 
 .box {
@@ -150,4 +151,8 @@ a {
 
 #gender-list {
   padding-bottom: 10px;
+}
+
+.hit-name > div {
+  color: #444;
 }
