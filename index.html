@@ -9,30 +9,24 @@
 
 <body>
   <header>
-    <h1>
-      <a href="https://www.celestino.gr"><img src="https://www.celestino.gr/icons/celestino.svg"
-          style="margin-right: 250px;"></a>
-      <a href="https://www.celestino.gr/account/login.aspx" id="signin">Sign in</a>
-      <i class="fas fa-search"></i>
-      <div id="search-box">
-      </div>
-    </h1>
+    <div id="search-box"></div>
   </header>
-  <main>
-    <div class="hit-results">
+  <br>
+  <br>
+  <div class="hit-results">
+    <div class="column middle" style="border-right: 1px solid black;">
       <h3>Προϊόντα</h3>
       <div id="hits"></div>
-      <div id="sub-categories">
-        <h3>Χρώμα</h3>
-        <div id="color-list"></div>
-        <h3>Κατηγορίες</h3>
-        <div id="category-list"></div>
-        <h3>Φύλο</h3>
-        <div id="gender-list"></div>
-      </div>
     </div>
-  </main>
-
+    <div id="sub-categories" style="padding-left: 60px;">
+      <h3>Χρώμα</h3>
+      <div id="color-list"></div>
+      <h3>Κατηγορίες</h3>
+      <div id="category-list"></div>
+      <h3>Φύλο</h3>
+      <div id="gender-list"></div>
+    </div>
+  </div>
   <script type="text/html" id="hit-template">
     <div class="hits"></div>
   </script>

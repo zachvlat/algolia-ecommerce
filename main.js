@@ -23,7 +23,7 @@ const searchClient = algoliasearch(
 
   search.addWidgets(
     [instantsearch.widgets.configure({
-      hitsPerPage: 3,
+      hitsPerPage: 20,
       distinct: true,
       enablePersonalization: true,
     })]);
