@@ -24,7 +24,7 @@ const searchClient = algoliasearch(
   //search configuration
   search.addWidgets(
     [instantsearch.widgets.configure({
-      hitsPerPage: 20,
+      hitsPerPage: 3,
       distinct: true,
       enablePersonalization: true,
     })]);
@@ -71,7 +71,8 @@ const searchClient = algoliasearch(
       `,
       empty: `<div>
       <p>Δεν βρέθηκε τίποτα σχετικά με {{ query }}</p>
-      <a role="button" href=".">Καθαρισμός φίλτρων</a>
+      <br>
+      <a role="button" href=".">Καθαρισμός όλων</a>
     </div>`,
       },
     })

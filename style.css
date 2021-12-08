@@ -1,19 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+@media (max-width: 600px) {
+  .ais-Hits-item {
+    padding-left: 19px;
+  }
+  #search-box {
+    width: 100%;
+  }
+  header {
+    top: 0;
+  }
+  #sub-categories {
+    padding-left: 0px;
+  }
+  .hit-results {
+    -webkit-flex-direction: column;
+    flex-direction: column-reverse;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: Roboto;
+  font-family: Roboto, "Open Sans", sans-serif;
 }
 
 a[role="button"] {
-  bottom: 300px;
   color: aliceblue;
   background-color: #001001;
   border-style: none;
-  border-radius: 20px;
-  width: 150px;
-  height: 80px;
+  border-radius: 25px;
+  padding: 2px;
 }
 
 .hit-results {
@@ -30,29 +47,14 @@ a[role="button"] {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  padding-left: 60px;
 }
 
 .column-middle {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
-}
-
-@media (max-width: 600px) {
-  .sizer {
-    width: 60px;
-    height: 100px;
-  }
-  #search-box {
-    width: 100%;
-  }
-  header {
-    top: 0;
-  }
-  .hit-results {
-    -webkit-flex-direction: column;
-    flex-direction: column-reverse;
-  }
+  border-right: 1px solid black;
 }
 
 h1 {
@@ -112,6 +114,7 @@ a {
 
 .ais-RefinementList-item {
   text-decoration: none;
+  text-transform: lowercase;
 }
 
 .ais-RefinementList-showMore {
