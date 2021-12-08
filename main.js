@@ -1,9 +1,11 @@
+//credentials
 const searchClient = algoliasearch(
     'testingT4WFG88MK7',
     'b50186ba4da247be88afb1e84ef318f0'
   );
   const search = instantsearch({
     searchFunction(helper) {
+      //hide elements
     const container = document.querySelector('#hits');
     const container6 = document.querySelector('#color-list');
     const container2 = document.querySelector("#sub-categories");
@@ -26,6 +28,7 @@ const searchClient = algoliasearch(
       enablePersonalization: true,
     })]);
 
+    //search box initialization
   search.addWidgets([
     instantsearch.widgets.searchBox({
       container: '#search-box',
@@ -41,6 +44,7 @@ const searchClient = algoliasearch(
     })
   ]);
 
+  //hits initialization
   search.addWidgets([
     instantsearch.widgets.hits({
       container: '#hits',
@@ -64,11 +68,15 @@ const searchClient = algoliasearch(
         </div>
       </div>
       `,
-      empty: 'Δε βρέθηκε τίποτα για <q>{{ query }}</q>',
+      empty: `<div>
+      <p>Δεν βρέθηκε τίποτα σχετικά με {{ query }}</p>
+      <a role="button" href=".">Καθαρισμός φίλτρων</a>
+    </div>`,
       },
     })
   ]);
 
+  //color list
   search.addWidgets([instantsearch.widgets.refinementList({
     container: '#color-list',
     attribute: 'color_gr',
@@ -94,6 +102,7 @@ const searchClient = algoliasearch(
   }),
 ])
 
+//category list
 search.addWidgets([instantsearch.widgets.refinementList({
   container: '#category-list',
   attribute: 'category_gr',
@@ -119,6 +128,7 @@ search.addWidgets([instantsearch.widgets.refinementList({
 }),
 ])
 
+//gender list
 search.addWidgets([instantsearch.widgets.refinementList({
   container: '#gender-list',
   attribute: 'gender_gr',

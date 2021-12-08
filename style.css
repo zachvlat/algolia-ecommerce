@@ -34,6 +34,16 @@ main {
   display: flex;
 }
 
+a[role="button"] {
+  bottom: 300px;
+  color: aliceblue;
+  background-color: #001001;
+  border-style: none;
+  border-radius: 20px;
+  width: 150px;
+  height: 80px;
+}
+
 #view-all {
   position: absolute;
   bottom: 300px;
