@@ -1,7 +1,7 @@
 //credentials
 const searchClient = algoliasearch(
-    'testingT4WFG88MK7',
-    'b50186ba4da247be88afb1e84ef318f0'
+    'testingT4WFG88MK7', //<----Application ID
+    'b50186ba4da247be88afb1e84ef318f0' //<----Search API Key
   );
   const search = instantsearch({
     searchFunction(helper) {
@@ -16,11 +16,12 @@ const searchClient = algoliasearch(
     container6.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
     },
-    indexName: 'Test_01',
+    indexName: 'Test_01', //<----Index
     searchClient,
     routing: true,
   });
 
+  //search configuration
   search.addWidgets(
     [instantsearch.widgets.configure({
       hitsPerPage: 20,
