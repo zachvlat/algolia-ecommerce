@@ -50,6 +50,7 @@ const searchClient = algoliasearch(
     instantsearch.widgets.hits({
       container: '#hits',
       limit: 3,
+      sortBy: ['count:desc', 'name:asc'],
       templates: {
         item: `
         <div class="container" href="{{link}}">

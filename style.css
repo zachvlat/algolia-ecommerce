@@ -14,7 +14,8 @@
     padding-left: 0px;
   }
   .hit-results {
-    -webkit-flex-direction: column;
+    -ms-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
 }
@@ -68,6 +69,7 @@ header > div {
 
 ol {
   display: flex;
+  display: -webkit-flex;
 }
 
 li {
@@ -107,6 +109,7 @@ a {
 
 .ais-RefinementList-list {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 0;
@@ -125,6 +128,7 @@ a {
 }
 
 .caption {
+  width: 150px;
   display: block;
   font-size: 14px;
 }
@@ -158,11 +162,12 @@ a {
 }
 
 .hit-name {
-  padding-left: 30px;
+  padding-left: 2px;
 }
 
 #search-with-glass {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
   align-items: flex-start;
 }
