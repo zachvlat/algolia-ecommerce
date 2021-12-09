@@ -156,3 +156,22 @@ a {
 .hit-name > div {
   color: #444;
 }
+
+.hit-name {
+  padding-left: 25px;
+}
+
+#search-with-glass {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#search-with-glass > i {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  top: 6px;
+  left: 6px;
+  color: rgb(116, 114, 114);
+}
