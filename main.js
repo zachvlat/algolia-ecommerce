@@ -45,21 +45,11 @@ const searchClient = algoliasearch(
     })
   ]);
 
-  // search.addWidgets([
-  //   instantsearch.widgets.autocomplete({
-  //       container: $('#autocomplete'),
-  //         onSelectChange({ query }) {
-  //           search.helper.setQuery(query).search();
-  //         },
-  //     })
-  // ])
-
   //hits initialization
   search.addWidgets([
     instantsearch.widgets.hits({
       container: '#hits',
       limit: 3,
-      sortBy: ['count:desc', 'name:asc'],
       templates: {
         item: `
         <div class="container" href="{{link}}">
