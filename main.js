@@ -16,7 +16,7 @@ const searchClient = algoliasearch(
     container6.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
     },
-    indexName: 'Test_01', //<----Index
+    indexName: 'test_01_replica_color', //<----Index
     searchClient,
     routing: true,
   });
