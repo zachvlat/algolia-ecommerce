@@ -155,55 +155,6 @@ search.addWidgets([instantsearch.widgets.refinementList({
 }),
 ])
 
-const autocomplete = instantsearch.connectors.connectAutocomplete(
-  ({ indices, refine, widgetParams }, isFirstRendering) => {
-    const { container, onSelectChange } = widgetParams;
-
-    if (isFirstRendering) {
-      container.html('<select id="ais-autocomplete"></select>');
-
-      container.find('select').selectize({
-        options: [],
-        valueField: 'query',
-        labelField: 'query',
-        highlight: false,
-        onType: refine,
-        onBlur() {
-          refine(this.getValue());
-        },
-        onChange(value) {
-          refine(value);
-          onSelectChange({
-            query: value,
-          });
-        },
-        score() {
-          return () => 1;
-        },
-        render: {
-          option({ query }) {
-            return `
-              <div class="option">
-                ${query}
-              </div>
-            `;
-          },
-        },
-      });
-
-      return;
-    }
-
-    const [select] = container.find('select');
-
-    select.selectize.clearOptions();
-    indices.forEach(({ results }) => {
-      results.hits.forEach(hit => select.selectize.addOption(hit));
-    });
-    select.selectize.refreshOptions(select.selectize.isOpen);
-  }
-);
-
   search.start();
 
 
