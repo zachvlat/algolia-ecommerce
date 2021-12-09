@@ -71,7 +71,7 @@ const searchClient = algoliasearch(
       empty: `<div>
       <p>Δεν βρέθηκε τίποτα σχετικά με {{ query }}</p>
       <br>
-      <a role="button" href=".">Καθαρισμός όλων</a>
+      <a role="button" href=".">Καθαρισμός φίλτρων</a>
     </div>`,
       },
     })
