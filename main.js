@@ -82,7 +82,7 @@ const searchClient = algoliasearch(
     container: '#color-list',
     attribute: 'color_gr',
     limit: 3,
-    showMore: true,
+    showMore: false,
     sortBy: ['count:desc', 'name:asc'],
     templates: {
       item: `
@@ -106,9 +106,9 @@ const searchClient = algoliasearch(
 //category list
 search.addWidgets([instantsearch.widgets.refinementList({
   container: '#category-list',
-  attribute: 'category_gr',
+  attribute: 'subcategory_gr',
   limit: 3,
-  showMore: true,
+  showMore: false,
   sortBy: ['count:desc', 'name:asc'],
   templates: {
     item: `
@@ -130,30 +130,30 @@ search.addWidgets([instantsearch.widgets.refinementList({
 ])
 
 //gender list
-search.addWidgets([instantsearch.widgets.refinementList({
-  container: '#gender-list',
-  attribute: 'gender_gr',
-  limit: 3,
-  showMore: true,
-  sortBy: ['count:desc', 'name:asc'],
-  templates: {
-    item: `
-      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
-        <span>{{label}} ({{count}})</span>
-      </a>
-    `,
-    showMoreText: `
-    {{#isShowingMore}}
-      Λιγότερα
-    {{/isShowingMore}}
-    {{^isShowingMore}}
-      Περισσότερα
-    {{/isShowingMore}}
-  `,
-  searchableNoResults: 'Κανένα αποτέλεσμα',
-  },
-}),
-])
+// search.addWidgets([instantsearch.widgets.refinementList({
+//   container: '#gender-list',
+//   attribute: 'gender_gr',
+//   limit: 3,
+//   showMore: false,
+//   sortBy: ['count:desc', 'name:asc'],
+//   templates: {
+//     item: `
+//       <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+//         <span>{{label}} ({{count}})</span>
+//       </a>
+//     `,
+//     showMoreText: `
+//     {{#isShowingMore}}
+//       Λιγότερα
+//     {{/isShowingMore}}
+//     {{^isShowingMore}}
+//       Περισσότερα
+//     {{/isShowingMore}}
+//   `,
+//   searchableNoResults: 'Κανένα αποτέλεσμα',
+//   },
+// }),
+// ])
 
   search.start();
 

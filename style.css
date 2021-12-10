@@ -7,11 +7,23 @@
   #search-box {
     width: 100%;
   }
+  .ais-Hits-list {
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+  .sizer {
+    width: 50%;
+  }
+
+  .ais-Hits-item {
+    width: 200px;
+  }
+
   header {
     top: 0;
   }
-  #sub-categories {
-    padding-left: 0px;
+  div > #sub-categories {
+    padding-left: 10px;
   }
   .hit-results {
     -ms-flex-direction: column-reverse;
