@@ -129,7 +129,7 @@ search.addWidgets([instantsearch.widgets.refinementList({
 }),
 ])
 
-gender list
+//size list
 search.addWidgets([instantsearch.widgets.refinementList({
   container: '#size-list',
   attribute: 'size_group',
