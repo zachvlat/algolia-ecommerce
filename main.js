@@ -129,31 +129,31 @@ search.addWidgets([instantsearch.widgets.refinementList({
 }),
 ])
 
-//gender list
-// search.addWidgets([instantsearch.widgets.refinementList({
-//   container: '#gender-list',
-//   attribute: 'gender_gr',
-//   limit: 3,
-//   showMore: false,
-//   sortBy: ['count:desc', 'name:asc'],
-//   templates: {
-//     item: `
-//       <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
-//         <span>{{label}} ({{count}})</span>
-//       </a>
-//     `,
-//     showMoreText: `
-//     {{#isShowingMore}}
-//       Λιγότερα
-//     {{/isShowingMore}}
-//     {{^isShowingMore}}
-//       Περισσότερα
-//     {{/isShowingMore}}
-//   `,
-//   searchableNoResults: 'Κανένα αποτέλεσμα',
-//   },
-// }),
-// ])
+gender list
+search.addWidgets([instantsearch.widgets.refinementList({
+  container: '#size-list',
+  attribute: 'size_group',
+  limit: 3,
+  showMore: false,
+  sortBy: ['count:desc', 'name:asc'],
+  templates: {
+    item: `
+      <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
+        <span>{{label}} ({{count}})</span>
+      </a>
+    `,
+    showMoreText: `
+    {{#isShowingMore}}
+      Λιγότερα
+    {{/isShowingMore}}
+    {{^isShowingMore}}
+      Περισσότερα
+    {{/isShowingMore}}
+  `,
+  searchableNoResults: 'Κανένα αποτέλεσμα',
+  },
+}),
+])
 
   search.start();
 
