@@ -1,7 +1,7 @@
 //credentials
 const searchClient = algoliasearch(
-    'testingT4WFG88MK7', //<----Application ID
-    'b50186ba4da247be88afb1e84ef318f0' //<----Search API Key
+    '9TD1HYGF79', //<----Application ID
+    'c62fb23865460393db7486816441939c' //<----Search API Key
   );
   const search = instantsearch({
     searchFunction(helper) {
@@ -16,7 +16,7 @@ const searchClient = algoliasearch(
     container6.style.display = helper.state.query === '' ? 'none' : '';
     helper.search();
     },
-    indexName: 'test_01_replica_color', //<----Index
+    indexName: 'Official Live Feed', //<----Index
     searchClient,
     routing: true,
   });
