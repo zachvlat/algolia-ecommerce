@@ -1,57 +1,58 @@
 //credentials
 const searchClient = algoliasearch(
-    '9TD1HYGF79', //<----Application ID
-    'c62fb23865460393db7486816441939c' //<----Search API Key
-  );
-  const search = instantsearch({
-    searchFunction(helper) {
-      //hide elements
-    const container = document.querySelector('#hits');
-    const container6 = document.querySelector('#color-list');
+  "9TD1HYGF79", //<----Application ID
+  "c62fb23865460393db7486816441939c" //<----Search API Key
+);
+const search = instantsearch({
+  searchFunction(helper) {
+    //hide elements
+    const container = document.querySelector("#hits");
+    const container6 = document.querySelector("#color-list");
     const container2 = document.querySelector("#sub-categories");
     const container3 = document.querySelector(".hit-results");
-    container.style.display = helper.state.query === '' ? 'none' : '';
-    container2.style.display = helper.state.query === '' ? 'none' : '';
-    container3.style.display = helper.state.query === '' ? 'none' : '';
-    container6.style.display = helper.state.query === '' ? 'none' : '';
+    container.style.display = helper.state.query === "" ? "none" : "";
+    container2.style.display = helper.state.query === "" ? "none" : "";
+    container3.style.display = helper.state.query === "" ? "none" : "";
+    container6.style.display = helper.state.query === "" ? "none" : "";
     helper.search();
+  },
+  indexName: "searchresults", //<----Index
+  searchClient,
+  routing: true,
+});
+
+//search configuration
+search.addWidgets([
+  instantsearch.widgets.configure({
+    hitsPerPage: 10,
+    distinct: true,
+    enablePersonalization: true,
+  }),
+]);
+
+//search box initialization
+search.addWidgets([
+  instantsearch.widgets.searchBox({
+    container: "#search-box",
+    placeholder: "Αναζήτηση",
+    searchAsYouType: true,
+    autofocus: true,
+    showReset: false,
+    showSubmit: false,
+    cssClasses: {
+      input: "search-box-celestino",
+      submitIcon: "fa-search",
     },
-    indexName: 'Official Live Feed', //<----Index
-    searchClient,
-    routing: true,
-  });
+  }),
+]);
 
-  //search configuration
-  search.addWidgets(
-    [instantsearch.widgets.configure({
-      hitsPerPage: 3,
-      distinct: true,
-      enablePersonalization: true,
-    })]);
-
-    //search box initialization
-  search.addWidgets([
-    instantsearch.widgets.searchBox({
-      container: '#search-box',
-      placeholder: 'Αναζήτηση',
-      searchAsYouType: true,
-      autofocus: true,
-      showReset: false,
-      showSubmit: false,
-      cssClasses: {
-        input: "search-box-celestino",
-        submitIcon: "fa-search",
-      }
-    })
-  ]);
-
-  //hits initialization
-  search.addWidgets([
-    instantsearch.widgets.hits({
-      container: '#hits',
-      limit: 3,
-      templates: {
-        item: `
+//hits initialization
+search.addWidgets([
+  instantsearch.widgets.hits({
+    container: "#hits",
+    limit: 3,
+    templates: {
+      item: `
         <div class="container" href="{{link}}">
           <div class="card">
             <div class="box">
@@ -73,17 +74,18 @@ const searchClient = algoliasearch(
       <br>
       <a role="button" href=".">Καθαρισμός φίλτρων</a>
     </div>`,
-      },
-    })
-  ]);
+    },
+  }),
+]);
 
-  //color list
-  search.addWidgets([instantsearch.widgets.refinementList({
-    container: '#color-list',
-    attribute: 'color_gr',
+//color list
+search.addWidgets([
+  instantsearch.widgets.refinementList({
+    container: "#color-list",
+    attribute: "color_gr",
     limit: 3,
     showMore: false,
-    sortBy: ['count:desc', 'name:asc'],
+    sortBy: ["count:desc", "name:asc"],
     templates: {
       item: `
         <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
@@ -98,25 +100,26 @@ const searchClient = algoliasearch(
         Περισσότερα
       {{/isShowingMore}}
     `,
-    searchableNoResults: 'Κανένα αποτέλεσμα',
+      searchableNoResults: "Κανένα αποτέλεσμα",
     },
   }),
-])
+]);
 
 //category list
-search.addWidgets([instantsearch.widgets.refinementList({
-  container: '#category-list',
-  attribute: 'subcategory_gr',
-  limit: 3,
-  showMore: false,
-  sortBy: ['count:desc', 'name:asc'],
-  templates: {
-    item: `
+search.addWidgets([
+  instantsearch.widgets.refinementList({
+    container: "#category-list",
+    attribute: "subcategory_gr",
+    limit: 3,
+    showMore: false,
+    sortBy: ["count:desc", "name:asc"],
+    templates: {
+      item: `
       <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
         <span>{{label}} ({{count}})</span>
       </a>
     `,
-    showMoreText: `
+      showMoreText: `
     {{#isShowingMore}}
       Λιγότερα
     {{/isShowingMore}}
@@ -124,25 +127,26 @@ search.addWidgets([instantsearch.widgets.refinementList({
       Περισσότερα
     {{/isShowingMore}}
   `,
-  searchableNoResults: 'Κανένα αποτέλεσμα',
-  },
-}),
-])
+      searchableNoResults: "Κανένα αποτέλεσμα",
+    },
+  }),
+]);
 
 //size list
-search.addWidgets([instantsearch.widgets.refinementList({
-  container: '#size-list',
-  attribute: 'size_group',
-  limit: 3,
-  showMore: false,
-  sortBy: ['count:desc', 'name:asc'],
-  templates: {
-    item: `
+search.addWidgets([
+  instantsearch.widgets.refinementList({
+    container: "#size-list",
+    attribute: "size_group",
+    limit: 3,
+    showMore: false,
+    sortBy: ["count:desc", "name:asc"],
+    templates: {
+      item: `
       <a href="{{url}}" style="{{#isRefined}}font-weight: bold{{/isRefined}}">
         <span>{{label}} ({{count}})</span>
       </a>
     `,
-    showMoreText: `
+      showMoreText: `
     {{#isShowingMore}}
       Λιγότερα
     {{/isShowingMore}}
@@ -150,13 +154,12 @@ search.addWidgets([instantsearch.widgets.refinementList({
       Περισσότερα
     {{/isShowingMore}}
   `,
-  searchableNoResults: 'Κανένα αποτέλεσμα',
-  },
-}),
-])
+      searchableNoResults: "Κανένα αποτέλεσμα",
+    },
+  }),
+]);
 
-  search.start();
-
+search.start();
 
 //   `
 //   <div class="container" href="{{link}}">
